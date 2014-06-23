@@ -1,0 +1,33 @@
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="col-xs-2">
+            <a href="/about">about</a>
+        </div>
+        <div class="col-xs-2">
+            <a href="/legal">legal</a>
+        </div>
+
+        <div class="col-xs-2">
+            <a href="/contact" >contact</a>
+        </div>
+        <div class="col-xs-2">
+            <a href="/relate">Agony Uncle </a>
+        </div>
+        <div class="col-xs-4">
+            <small>copyright &copy; 2014 UnoSpark</small>
+        </div>
+    </div>
+</div>
+
+{% for file in assets.core.js %}
+    <script type="text/javascript" src="{{file}}"></script>
+{% endfor %}
+
+{% if (process.env.NODE_ENV == 'development') %}
+    <!-- Livereload script rendered -->
+    <script type="text/javascript" src="{{'http://' + req.host + ':35729/livereload.js'}}"></script>
+{% endif %}
+
+<script type="text/javascript" src="/modules/aggregated.js"></script>
+
