@@ -2,10 +2,12 @@
 
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/../../..');
-
+//port: process.env.PORT || 8080,
 module.exports = {
 	root: rootPath,
-	port: process.env.PORT || 8080,
+
+
+    port: process.env.OPENSHIFT_NODEJS_PORT || 8080,
 	hostname: process.env.HOST || process.env.HOSTNAME,
 	db: process.env.MONGOHQ_URL,
 	templateEngine: 'swig',
